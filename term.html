@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Insurance Agency Training</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+
+  <!-- ========== HEADER (identical to home page) ========== -->
+  <header>
+    <img src="images/logo.png" class="slide-in right" alt="Company Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html">Services</a>
+      <a href="index.html">Customers</a>
+      <a href="index.html">Login</a>
+      <a href="index.html#footer">Contact Us</a>
+    </nav>
+  </header>
+
+   <section class="page term" id="term" style="min-height:100vh; background-color: #659975;">
+    <div class="about-container fade-in">
+      <div class="about-text">
+        <h1 class="slide-in left">Term of Service</h1>
+        <p> <h3>1. Acceptance of Terms</h3>
+    <ul>
+      <li>By using our website ("Site"), you agree to these Terms of Service ("Terms").</li>
+      <li>You also agree to our Privacy Policy and any other policies we provide.</li>
+      <li>If you do not agree, do not use the Site.</li>
+    </ul>
+
+    <h3>2. Use of the Site</h3>
+    <ul>
+      <li>You agree to use the Site only for lawful purposes.</li>
+      <li>You must not:
+        <ul>
+          <li>Violate any applicable laws or regulations.</li>
+          <li>Restrict or inhibit others’ use of the Site.</li>
+          <li>Attempt unauthorized access to the Site, server, or database.</li>
+          <li>Use software/devices that interfere with Site functionality.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>3. User Accounts</h3>
+    <ul>
+      <li>Creating an account may be required to access certain features.</li>
+      <li>You must provide accurate and current information.</li>
+      <li>You’re responsible for all activities under your account.</li>
+      <li>Report unauthorized use or security breaches immediately.</li>
+    </ul>
+
+    <h3>4. Intellectual Property Rights</h3>
+    <ul>
+      <li>All content and features are owned by our company or licensors.</li>
+      <li>Protected under international IP laws (copyright, trademark, etc.).</li>
+      <li>You are given a non-transferable, non-commercial license to use the Site.</li>
+      <li>You may not:
+        <ul>
+          <li>Copy, modify, distribute, or reverse engineer the Site.</li>
+          <li>Sell or lease any part of our content or software.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>5. Termination</h3>
+    <ul>
+      <li>We may suspend or terminate your access without notice.</li>
+      <li>This can occur if you violate these Terms or harm others.</li>
+    </ul>
+
+    <h3>6. Limitation of Liability</h3>
+    <ul>
+      <li>We provide the Site "as is" with no warranties.</li>
+      <li>We are not responsible for:
+        <ul>
+          <li>Errors or inaccuracies of content.</li>
+          <li>Personal injury or damage from Site use.</li>
+          <li>Unauthorized access to stored information.</li>
+          <li>Service interruptions.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>7. Indemnification</h3>
+    <ul>
+      <li>You agree to indemnify and hold harmless our company, staff, and partners from any claims or losses arising from:
+        <ul>
+          <li>Your use of the Site.</li>
+          <li>Violation of these Terms.</li>
+          <li>Violation of third-party rights.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>8. Governing Law</h3>
+    <ul>
+      <li>These Terms are governed by the laws of <i>[Your Country/State]</i>.</li>
+      <li>You agree to resolve disputes in courts of <i>[Your Country/State]</i>.</li>
+    </ul>
+
+    <h3>9. Changes to These Terms</h3>
+    <ul>
+      <li>We may change these Terms at any time.</li>
+      <li>Changes will be posted on the Site.</li>
+      <li>Your continued use means you accept the updated Terms.</li>
+    </ul>
+
+    <h3>10. Contact Information</h3>
+    <ul>
+      <li>If you have questions, contact us at: <a href="mailto:any@insuranceagencytraining.support">any@insuranceagencytraining.support</a></li>
+    </ul>
+  </p>
+    </div>
+        </div>
+        </section>
+
+
+  <!-- ========== FOOTER (identical to home page) ========== -->
+  <footer class="footer" id="footer">
+    <div class="footer-social slide-in right">
+      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="slide-in right">
+      <a href="about.html" class="footer-link">About Us</a>
+      <a href="term.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html">E-Book</a>
+    </div><br>
+    
+  </footer>
+
+  <!-- ========== Your existing slide-in & scroll JS ========== -->
+  <script>
+    // Smooth scroll for anchors
+    document.querySelectorAll('nav a[href^="index.html#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href').split('#')[1];
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Slide-in on scroll
+    const slides = document.querySelectorAll('.slide-in');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    slides.forEach(s => obs.observe(s));
+
+    // Fade-in (partners & about)
+    document.querySelectorAll('.fade-in').forEach(el => {
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

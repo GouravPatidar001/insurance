@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Insurance Agency Training</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Partners grid styles (you can also drop this into style.css) */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: auto;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      justify-items: center;
+    }
+    .partners-grid img {
+      width: 160px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .partners-grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER (identical to home page) ========== -->
+  <header>
+    <img src="images/logo.png" class="slide-in right" alt="Company Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="index.html">Services</a>
+      <a href="index.html">Customers</a>
+      <a href="index.html">Login</a>
+      <a href="index.html#footer">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- ========== ABOUT US (full-screen) ========== -->
+  <section class="page about" id="about" style="min-height:100vh;">
+    <div class="about-container fade-in">
+      <div class="about-text">
+        <h1 class="slide-in left">About Us</h1>
+        <p class="slide-in right">          
+We are a team of seasoned insurance and financial experts with decades of success at the forefront of the industry. Our training programs have been recognized and showcased worldwide by Million Dollar Round Table (MDRT) agents, setting the standard for excellence and professionalism.
+Our approach goes beyond the boardroom — from offices and coffee shops to kitchen tables, we help people truly understand why life insurance is a vital cornerstone of a secure financial portfolio. We firmly believe life insurance is an essential tool for preparing your future and safeguarding financial stability.
+Our mission is to empower insurance agents by providing the tools, knowledge, and support they need to build stronger teams, educate their clients, and boost their sales with confidence.
+<br><br>
+<b>Our Passion:</b>
+
+We are deeply passionate about what we do, crafting every product with care and precision to simplify your work and help you succeed.
+
+Attention to detail drives us, and we consistently aim for excellence in all we deliver.
+<br>
+<b>Our Commitment:</b>
+
+We stand firmly behind our work and projects, continuously improving with every update.
+
+Our goal is to provide comprehensive, feature-rich solutions while maintaining simplicity and efficiency.
+<br>
+<b>Our Philosophy:</b>
+
+We believe great design should be seamless and intuitive, enhancing the user experience without distractions.
+
+This approach lets you focus on what truly matters — driving sales and achieving outstanding results without wasting time on complexity
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/photo5.png" class="slide-in bottom" alt="Training Visual" />
+      </div>
+    </div>
+    <br><br>
+    <!-- ========== OUR PARTNERS GRID ========== -->
+    <!-- Our Partners Section -->
+<section id="partners" style="background-color: #fff;">
+  <div class="container">
+    <h1 class="slide-in left" class="section-title" style="color: #2c6b2f; text-align: center; margin-bottom: 30px;">
+      Our Partners
+    </h1>
+    <div class="partners-grid">
+      <img src="images/partner1.png" alt="Partner 1" />
+      <img src="images/partner2.png" alt="Partner 2" />
+      <img src="images/partner3.png" alt="Partner 3" />
+      <img src="images/partner4.png" alt="Partner 4" />
+      <img src="images/partner5.png" alt="Partner 5" />
+      <img src="images/partner6.png" alt="Partner 5" />
+      <!-- Add more logos as needed -->
+    </div>
+  </div>
+</section>
+
+
+  <!-- ========== FOOTER (identical to home page) ========== -->
+  <footer class="footer" id="footer">
+    <div class="footer-social slide-in right">
+      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="slide-in right">
+      <a href="about.html" class="footer-link">About Us</a>
+      <a href="term.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html">E-Book</a>
+    </div><br>
+    
+  </footer>
+
+  <!-- ========== Your existing slide-in & scroll JS ========== -->
+  <script>
+    // Smooth scroll for anchors
+    document.querySelectorAll('nav a[href^="index.html#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href').split('#')[1];
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Slide-in on scroll
+    const slides = document.querySelectorAll('.slide-in');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    slides.forEach(s => obs.observe(s));
+
+    // Fade-in (partners & about)
+    document.querySelectorAll('.fade-in').forEach(el => {
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

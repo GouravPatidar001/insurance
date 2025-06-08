@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Insurance Agency Training</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+
+  <!-- ========== HEADER (identical to home page) ========== -->
+  <header>
+    <img src="images/logo.png" class="slide-in right" alt="Company Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html">Services</a>
+      <a href="index.html">Customers</a>
+      <a href="index.html">Login</a>
+      <a href="index.html#footer">Contact Us</a>
+    </nav>
+  </header>
+
+   <section class="page privacy" id="privacy" style="min-height:100vh; background-color: #659975;">
+    <div class="about-container fade-in">
+      <div class="about-text">
+        <h1 class="slide-in left">Privacy Policy</h1>
+        <p>
+            <br>
+            <b>1. Collection of Personal Information</b>
+We collect personal information when you voluntarily provide it to us. This includes information you provide when you register for an account, subscribe to our newsletter, or submit a contact form. The types of personal information we may collect include:
+
+Contact information such as your name email address and phone number;
+Login credentials such as your username and password;
+Demographic information such as your age, gender, and location; and
+Other information you choose to provide to us.
+We may also automatically collect certain information about your use of the site such as your IP address, browser type, and operating system.
+<br>
+<b>2. Use of Personal Information</b>
+We may use personal information for the following purposes:
+
+To provide you with the services and information offered on the site;
+To communicate with you about your account subscriptions and other activities on the site;
+To send you marketing communications such as newsletters promotions and other content we think may interest you;
+To customize your experience on the site;
+To analyze and improve the site and our services;
+To comply with legal and regulatory requirements; and
+For other purposes with your consent.
+<br>
+<b>3. Disclosure of Personal Information</b>
+We may disclose personal information to the following types of third-parties:
+
+Service providers that help us operate the site and provide our services;
+Third-party advertising partners;
+Law enforcement or government authorities if required by law, or to protect our legal rights;
+Successors in the event of a merger, acquisition, or other business transaction; and
+Other third-parties with your consent.
+<br>
+<b>4. Cookies and Other Technologies</b>
+We may use cookies, Web beacons, and other similar technologies to collect information about your use of the site. Cookies are small files that a website or its service provider transfers to your device's hard drive through your web browser (if you allow) that enables the website’s or other service providers systems to recognize your browser and capture and remember certain information. We use cookies to understand and save your preferences for future visits, to personalize your experience, and to compile aggregate data about site traffic and site interactions in order to offer better site experiences and tools in the future.
+<br>
+<b>5. Data Security</b>
+We take reasonable measures to protect personal information from unauthorized access, use, and disclosure. However, no transmission of data over the internet is guaranteed to be completely secure. Therefore, we cannot guarantee the security of any information transmitted to or from the site.
+<br>
+<b>6. Your Rights</b>
+You have the right to access, correct, delete, or restrict the use of your personal information. You may also withdraw your consent for us to process your personal information at any time. To exercise these rights please contact us using the information below.
+<br>
+<b>7. Changes to this Privacy Policy</b>
+We may update this privacy policy from time to time. The most current version of the privacy policy will be posted on the site. We encourage you to review the Privacy Policy periodically for any changes.
+<br>
+<b>8. Contact Us</b>
+If you have any questions about this privacy policy or our practices, or if you would like to exercise your rights or make a complaint, please contact us at: any@insuranceagencytraining.support.
+        </p>
+    </div>
+        </div>
+        </section>
+
+
+  <!-- ========== FOOTER (identical to home page) ========== -->
+  <footer class="footer" id="footer">
+    <div class="footer-social slide-in right">
+      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="slide-in right">
+      <a href="about.html" class="footer-link">About Us</a>
+      <a href="term.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html">E-Book</a>
+    </div><br>
+    
+  </footer>
+
+  <!-- ========== Your existing slide-in & scroll JS ========== -->
+  <script>
+    // Smooth scroll for anchors
+    document.querySelectorAll('nav a[href^="index.html#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href').split('#')[1];
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Slide-in on scroll
+    const slides = document.querySelectorAll('.slide-in');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    slides.forEach(s => obs.observe(s));
+
+    // Fade-in (partners & about)
+    document.querySelectorAll('.fade-in').forEach(el => {
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
